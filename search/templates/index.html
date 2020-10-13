@@ -1,0 +1,23 @@
+<doctype html="">
+	<title>Tivi Database</title>
+
+<h2>Tivi DataBase</h2>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flashes">
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+{% from "_formhelpers.html" import render_field %}
+<form method="post">
+  <p>
+    {{ render_field(form.search) }}
+  </p>
+  <p><input type="submit" value="Search">
+</p></form>
+</doctype>
